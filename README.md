@@ -11,7 +11,14 @@ Display on a page :
 * When you click on an Antilopes name, the app opens a pop-up with a chart representing the antilopes detailed information
 
 ## Technologies
-To reun the project :
+* React latest
+* Typescript
+* tailwind
+* ant design
+
+## Go go go !
+To run the project :
+* git clone repo
 * cd ../madkudu-assignment-nico
 * yarn install
 * yarn dev
