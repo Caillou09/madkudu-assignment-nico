@@ -14,4 +14,4 @@ Display on a page :
 To reun the project :
 * cd ../madkudu-assignment-nico
 * yarn install
-* yarn start
+* yarn dev
