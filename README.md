@@ -7,7 +7,7 @@ Display on a page :
 * grpahical charts
 
 ## Detailed Information
-* The home page of app contains the table containing the antilopes data fetched initialy
+* The home page of app contains the table of the antilopes data fetched initialy
 * When you click on an Antilopes name, the app opens a pop-up with a chart representing the antilopes detailed information
 
 ## Technologies
