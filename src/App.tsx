@@ -1,31 +1,42 @@
-import preview from "@/assets/preview/carbon.svg";
-import { Button } from "antd";
-import themeConfig from "./utils/utils";
-function App() {
-    return (
-        <div className="flex justify-center items-center flex-col h-screen space-y-5 bg-dark-purple">
-            <h1 className="text-4xl font-bold text-linen text-center ">
-                Tailwind CSS - Ant-design - React - TypeScript
-            </h1>
-            <Button
-                type="primary"
-                className=" bg-teal-600 border-teal-600 text-white font-bold rounded-none "
-            >
-                Ant btn with a tailwind css styles
-            </Button>
-            <Button type="primary">Ant btn</Button>
-            <Button
-                type="primary"
-                style={{
-                    background: themeConfig.theme.colors["slate-blue"],
-                    borderColor: themeConfig.theme.colors["slate-blue"],
-                }}
-            >
-                Ant btn with a javascript variable colors
-            </Button>
 
-            <img src={preview} width={800} />
-        </div>
+import { Layout } from 'antd';
+import { Outlet } from 'react-router-dom';
+import { Menu } from 'antd';
+import { Link } from "react-router-dom";
+import { useFetchData } from './fetcher';
+
+const { Header, Content } = Layout;
+
+function App() {
+
+    const [data, isLoading] = useFetchData();
+
+    return (
+        <Layout>
+            <Header className={'bg-dark-blue'}>
+                <h1 className="text-4xl font-bold text-linen flex justify-center text-center text-white">
+                    Assignment Madkudu by Nicolas
+                </h1>
+            </Header>
+            <Content>
+                    <Menu mode="horizontal" defaultSelectedKeys={['table']} className={"flex w-full justify-center bg-lavender-green font-bold"}>
+                        <Menu.Item key="table">
+                            <Link to="/" className={'text-white'}>
+                                Table
+                            </Link>
+                        </Menu.Item>
+                        <Menu.Item key="chart">
+                            <Link to="chart" className={'text-white'}>
+                                Chart
+                            </Link>
+                        </Menu.Item>
+                    </Menu>
+                <div className="flex justify-center items-start h-screen bg-light-purple pt-12">
+                    <Outlet context={{data : data, isLoading: isLoading}}  />
+                </div>
+            </Content>
+
+        </Layout>
     );
 }
 
