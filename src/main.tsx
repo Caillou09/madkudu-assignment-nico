@@ -8,8 +8,8 @@ import {
   Navigate
 } from "react-router-dom";
 import './style/index.less'
-import { TableComp } from './components/table';
-import { ChartComp } from './components/chart';
+import { TableComp } from './components/table/TableComp';
+import { ChartComp } from './components/chart/ChartComp';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

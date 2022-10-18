@@ -3,13 +3,14 @@ import { Layout } from 'antd';
 import { Outlet } from 'react-router-dom';
 import { Menu } from 'antd';
 import { Link } from "react-router-dom";
-import { useFetchData } from './fetcher';
+import { useFetchData } from './hooks/useFetchData';
 
 const { Header, Content } = Layout;
 
 function App() {
 
-    const [data, isLoading] = useFetchData();
+    const {data, isLoading} = useFetchData();
+    console.log(isLoading);
 
     return (
         <Layout>

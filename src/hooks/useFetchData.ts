@@ -6,7 +6,9 @@ export const useFetchData = () => {
     const [isLoading, setIsLoading] = React.useState(false);
 
     React.useMemo(() => {
+
         setIsLoading(true);
+
         async function getData() {
             await fetch('https://work-sample-mk-fs.s3-us-west-2.amazonaws.com/species.json',)
                 .then((res) => {
@@ -23,9 +25,11 @@ export const useFetchData = () => {
                     setErrorMessage(error.message)
                 })
         };
+
         getData();
+
     }, [])
 
 
-    return [data, error, isLoading];
+    return {data, error, isLoading};
 }

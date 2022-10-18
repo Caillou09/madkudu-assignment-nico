@@ -1,7 +1,7 @@
 import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 import type { ColumnsType } from 'antd/es/table';
-import { CardComp } from '../card';
+import { CardComp } from '../card/CardComp';
 
 import { Skeleton, Table, Popover } from 'antd';
 
@@ -50,7 +50,7 @@ export const TableComp: React.FC = ({ }) => {
 
     const { data, isLoading } = useOutletContext<{ data: [DataType], isLoading: boolean }>();
 
-    if (!data) {
+    if (isLoading && !data) {
         return <Skeleton active />;
     }
 
