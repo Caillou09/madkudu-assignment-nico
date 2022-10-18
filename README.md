@@ -23,6 +23,7 @@ To run the project :
 * git clone repo
 * cd ../madkudu-assignment-nico
 * yarn install
+
 If you want to run tests : 
 * cd ../madkudu-assignment-nico
 * yarn test
