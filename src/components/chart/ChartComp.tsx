@@ -57,7 +57,7 @@ export const ChartComp: React.FC = () => {
                 label: 'Height',
                 borderColor: 'rgb(255, 99, 132)',
                 borderWidth: 2,
-                fill: false,
+                backgroundColor: 'rgb(255, 99, 132)',
                 yAxisID: 'y',
                 data: labels.map((el) => el.height),
             },
@@ -66,7 +66,7 @@ export const ChartComp: React.FC = () => {
                 label: 'Weight',
                 backgroundColor: '#4b9fefff',
                 data: labels.map((el) => el.weight),
-                borderColor: 'white',
+                borderColor: '#4b9fefff',
                 yAxisID: 'y1',
                 borderWidth: 2,
             },
@@ -75,7 +75,7 @@ export const ChartComp: React.FC = () => {
                 label: 'Speed Capacity',
                 borderColor: '#efc932',
                 data: labels.map((el) => getSpeed(el.height, el.weight)),
-                fill: true,
+                backgroundColor: '#efc932',
                 borderWidth: 2,
             }
         ]
