@@ -13,6 +13,7 @@ import {
 } from 'chart.js';
 import { Chart } from 'react-chartjs-2';
 import { useOutletContext } from 'react-router';
+import { Skeleton } from 'antd';
 
 ChartJS.register(
     LinearScale,
@@ -40,7 +41,13 @@ export const ChartComp: React.FC = () => {
     const { data, isLoading } = useOutletContext<{ data: [DataType], isLoading: boolean }>();
 
     const labels = [...data];
-    console.log(labels);
+    
+    //Small function to calculate COMPLETLY approximativly the speed capacity of antelope
+    function getSpeed(height:number, weight:number):number {
+        let speed = (height*100/65) - (weight*65/900);
+        if (speed < 0) speed = 0;
+        return speed;
+    }
 
     const chartData = {
         labels: labels.map((el) => el.name),
@@ -63,6 +70,14 @@ export const ChartComp: React.FC = () => {
                 yAxisID: 'y1',
                 borderWidth: 2,
             },
+            {
+                type: 'line' as const,
+                label: 'Speed Capacity',
+                borderColor: '#efc932',
+                data: labels.map((el) => getSpeed(el.height, el.weight)),
+                fill: true,
+                borderWidth: 2,
+            }
         ]
     };
 
@@ -92,8 +107,12 @@ export const ChartComp: React.FC = () => {
         }
     }
 
+    if (isLoading && !data) {
+        return <Skeleton active />;
+    }
+
     return (
-        <div className={'w-5/6'} >
+        <div className={'w-4/6'} >
             <Chart type='bar' data={chartData} options={options} />
         </div >
     );

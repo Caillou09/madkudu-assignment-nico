@@ -62,7 +62,6 @@ export const TableComp: React.FC = ({ }) => {
                 rowKey="name"
                 className={'w-5/6'}
                 footer={() => 'Données reçues par Madkudu'}
-
             />
         </>
     );

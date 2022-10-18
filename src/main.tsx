@@ -4,8 +4,7 @@ import App from './App'
 import {
   BrowserRouter,
   Routes,
-  Route,
-  Navigate
+  Route
 } from "react-router-dom";
 import './style/index.less'
 import { TableComp } from './components/table/TableComp';
