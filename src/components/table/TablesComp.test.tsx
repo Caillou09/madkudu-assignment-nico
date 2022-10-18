@@ -69,6 +69,6 @@ describe('Test suite for Table', () => {
     test('should have n rows of data depedning on mocked data', () => {
         const { container } = render(setup());
         let rows = container.querySelectorAll('.ant-table-row ');
-        expect(rows.length).toHaveValue(3);
+        expect(rows.length).toEqual(3);
     })
 })
