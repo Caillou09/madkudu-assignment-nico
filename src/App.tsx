@@ -17,7 +17,7 @@ function App() {
     return (
         <Layout>
             <Header className={'bg-dark-blue'}>
-                <h1 className="text-4xl font-bold text-linen flex justify-center text-center text-white">
+                <h1 className="text-4xl font-bold text-linen flex justify-center text-center">
                     Assignment Madkudu by Nicolas
                 </h1>
             </Header>

@@ -8,13 +8,15 @@ Display on a page :
 
 ## Detailed Information
 * The home page of app contains the table of the antilopes data fetched initialy
-* When you click on an Antilopes name, the app opens a pop-up with a chart representing the antilopes detailed information
+* When you hover on an Antilopes name on the table, the app shows a Card component with informations on the antelope
+* The chart page shows a chart with quantitative informations on antelopes
 
 ## Technologies
 * React latest
 * Typescript
-* tailwind
 * ant design
+* tailwind
+* Jest and RTL for the tests
 
 ## Go go go !
 To run the project :
@@ -22,3 +24,7 @@ To run the project :
 * cd ../madkudu-assignment-nico
 * yarn install
 * yarn dev
+If you want to run tests : 
+* cd ../madkudu-assignment-nico
+* yarn test
+
